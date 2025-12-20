@@ -55,6 +55,23 @@ graph TD
 3. **Execution:** Actions are dispatched to the Edge; results are streamed back to the IDE.
 4. **Maintenance:** Infrastructure is managed via Terraform/OpenTofu (future) or Wrangler commands.
 
+```mermaid
+sequenceDiagram
+    participant IDE as 💻 Local IDE
+    participant MCP as 📋 MCP Registry
+    participant Gateway as 🌉 MCP Gateway
+    participant Edge as ☁️ Cloudflare Edge
+    
+    IDE->>MCP: 1. Load mcp_registry.json
+    MCP-->>IDE: Tool definitions
+    IDE->>Gateway: 2. Tool invocation request
+    Gateway->>Edge: 3. Route to D1/Vectorize/AI
+    Edge-->>Gateway: 4. Edge response
+    Gateway-->>IDE: 5. Stream results
+    
+    Note over IDE,Edge: Zero local compute overhead
+```
+
 ---
 
 ## 🚀 Use Cases: Infinite Scale on a Laptop
