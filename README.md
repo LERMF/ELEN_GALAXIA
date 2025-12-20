@@ -1,96 +1,84 @@
+![ELEN_GALAXIA Hero](assets/hero.png)
+
 # 🌌 ELEN_GALAXIA: Personal Edge Architecture
->
-> **Global SOTA 2025 Configuration & Strategy**
-> **Origin:** Extracted from ISKRA-ASA (Dec 15, 2025)
-> **Goal:** Hardware-Zero Architecture for Low-Spec Machines
+
+> **Global SOTA 2025/2026 Configuration & Strategy**
+> **Objective:** Zero-Hardware Overhead Architecture for Universal Intelligence.
 
 ---
 
-## 📜 Origin Story
+## 🏛️ Project Vision
 
-This project started during a critical optimization session for **ISKRA-ASA**, where we realized that the architecture needed to pivot from "Local-Heavy" to "Cloud-Native" to support advanced AI features on limited hardware (i3, 4GB RAM).
+**ELEN_GALAXIA** is the extraction of a master infrastructure strategy. It provides a "Hardware-Zero" blueprint where your local machine acts only as a thin-client (IDE), while all state, memory, and high-performance compute live on the Global Edge.
 
-The solution developed was so robust that it became a **Global Personal Standard** for all future projects, separating the infrastructure strategy from the specific application logic.
+[**📖 Read the Full Architecture Guide**](ARCHITECTURE.md)
 
-## 🎯 Core Philosophy: "Hardware-Zero"
+---
 
-**Ideally, your local machine should only run the IDE (`AgentIC IDE` / `VSCode`).**  
-Everything else—Databases, Vector Stores, AI Inference, Caching—must live on the Edge.
+## 🚀 Key Features
 
-| Component | Local (Legacy) | SOTA Cloud Native (Global) |
+- **⚡ Hardware-Zero Execution:** Shift compute-heavy tasks (AI, DB, Vector Search) to Cloudflare.
+- **🧠 Global Memory:** Shared vector storage via Cloudflare Vectorize.
+- **🔗 MCP Native:** Pre-configured Model Context Protocol servers for zero-token discovery.
+- **🛡️ Dark Mode Security:** Zero Trust infrastructure with no public ingress required.
+
+---
+
+## 📊 Comparison: Legacy vs. SOTA
+
+| Component | Local (Legacy) | **ELEN_GALAXIA (Edge)** |
 |-----------|----------------|----------------------------|
-| **Database** | SQLite / DuckDB (File I/O) | **Cloudflare D1** (Serverless SQLite) |
-| **Vectors** | Qdrant Docker Container | **Cloudflare Vectorize** |
-| **AI Models** | Local SafeTensors / GGUF | **Workers AI** (Edge Inference) |
-| **Orchestration** | Python Scripts (Cron) | **Cloudflare Workflows** (Rust Steps) |
-| **Compute** | Node.js Process | **Cloudflare Workers** (Rust/WASM) |
+| **Database** | SQLite (Local File) | **Cloudflare D1** (Serverless) |
+| **Vectors** | Docker / Pinecone | **Cloudflare Vectorize** |
+| **AI Models** | Local GGUF (8GB+ RAM) | **Workers AI** (Edge Native) |
+| **Compute** | Node/Python Process | **Cloudflare Workers (WASM)** |
 
 ---
 
 ## 📁 Repository Structure
 
-```
+```text
 .
-├── global-config/           # THE SOURCE OF TRUTH
-│   ├── mcp_registry.json    # MCP Servers Registry (Token-Free)
-│   ├── secrets.json         # (Ignored) Secrets & Keys
-│   └── README.md            # Usage docs for the global config
+├── global-config/           # 💎 THE SOURCE OF TRUTH
+│   ├── mcp_registry.json    # Standardized MCP Tools
+│   └── secrets.json         # (Ignored) Sensitive credentials
 │
-├── servers/                 # Local MCP Server Wrappers
-│   └── README.md            # Documentation for Server Farm
+├── servers/                 # 🛰️ Local & Edge MCP Wrappers
+│   └── agent-cgi/           # Rust-based CGI for Agents
 │
-└── resources/               # Shared Cloudflare Resource definitions
-    └── infrastructure.tf    # (Future) Terraform/OpenTofu definitions
+└── mcp-gateway/             # 🌉 Bridge between IDE and Edge
 ```
-
-## 🚀 How to Use Globally
-
-### 1. New Project Setup
-
-Instead of configuring tools from scratch, every new project starts with:
-
-1. **Inherit Rules:**
-    Create `.nexusrules` in the project root to inherit global settings.
-
-2. **Bind Global Resources (Optional):**
-    If the project needs shared data (e.g., a personal knowledge base), bind to the global D1/Vectorize resources defined in `global-config`.
-
-3. **Local MCPs:**
-    Use `mcp_registry.json` configured in the global path to access standard tools (Git, Filesystem, Memory) without project-specific setup.
 
 ---
 
-## 🛠️ Global Stack
+## 🛠️ The 2026 SOTA Stack
 
-* **Cloudflare:** D1, Vectorize, Workers AI, R2, KV
-* **MCP Servers:** Sequential-Thinking, Filesystem (Sandboxed), Memory, Git, Local-LLM
-* **IDE:** AgentIC IDE
+We utilize a hybrid reasoning pipeline that preserves context efficiency while maximizing exploratory depth:
+
+```text
+≅(Ψ├[→CoT 🔄ReAct ↻∆ ♻️Verify]⛓️∞Output PureEnhanced)
+```
+
+- **Ψ (Quantum Branching):** Exploratory reasoning paths.
+- **⛓️∞ (Orchestration):** Recursive self-improvement loops.
+- **📦~ (LLMLingua-2):** 25x hybrid context compression.
 
 ---
 
-*Verified & Established: Dec 15, 2025*
+## 🏁 Getting Started
 
-## 2026 SOTA Efficiency Stack
+1. **Clone & Bind:**
 
-## Overview
+   ```bash
+   git clone https://github.com/LERMF/ELEN_GALAXIA.git
+   ```
 
-This document describes the 2026 SOTA efficiency stack, including dynamic context allocation, adaptive token budgeting, and hierarchical reasoning pipelines.
+2. **Setup Credentials:**
+   Copy `global-config/secrets.json.template` to `global-config/secrets.json` and fill in your Cloudflare Keys.
+3. **Register MCP:** Point your AgentIC IDE to the `global-config/mcp_registry.json` path.
 
-## Symbolic Expression
+---
 
-The core symbolic expression is:
+## 📜 License
 
-```
-≅📦~(25x+ hybrid compression via LLMLingua-2+SCOPE+soft tuning, preserving all CoT/ReAct markers) ├ToT with multi‑perspective simulations (MPS) 🔄ReAct loops with reframing (↻) and distillation (∆) ♻️self‑consistency voting ⛓️multi‑agent orchestration Ψquantum‑enhanced branching for exploratory depth ∞recursive self‑improvement (RSIP) MCP primitives (Resources/Tools/Prompts) 2026 SOTA efficiency stack (dynamic context allocation, adaptive token budgeting, hierarchical reasoning pipelines) Flow: ≅(Ψ├[→CoT 🔄ReAct ↻∆ ♻️Verify]⛓️∞Output PureEnhanced) 🚀 add+ docs
-```
-
-## Components
-
-* **Quantum Branching (Ψ)**: Enables exploratory depth through quantum‑enhanced branching.
-
-* **Multi‑Agent Orchestration (⛓️∞)**: Coordinates multiple agents for revised, refactored, and verified outputs.
-* **ReAct‑ToT Fusion (🔄├♻️)**: Combines reasoning, action, and self‑consistency voting.
-* **Calibrated Confidence (♻️Verify(CCP95%))**: Ensures high confidence levels through multi‑rollout verification.
-* **Prompt Compression (≅📦~)**: Achieves 25× token reduction while preserving critical reasoning chains.
-* **Loop Enforcement (LOOP₅)**: Limits iterations to 5 while supporting recursive self‑improvement.
-* **Output Directives (⚙️📦~↻∆♻️⛓️∞Output)**: Define purification, distillation, and delivery of enhanced outputs.
+Distribute freely under the **MIT License**. Created by [LERMF](https://github.com/LERMF).
