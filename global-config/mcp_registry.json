@@ -1,0 +1,145 @@
+{
+    "mcpServers": {
+        "filesystem": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-filesystem",
+                "/home/lermf"
+            ]
+        },
+        "memory": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-memory"
+            ]
+        },
+        "git": {
+            "command": "docker",
+            "args": [
+                "run",
+                "-i",
+                "--rm",
+                "-v",
+                "/home/lermf:/projects",
+                "mcp/git"
+            ]
+        },
+        "sequential-thinking": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-sequential-thinking"
+            ]
+        },
+        "puppeteer": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-puppeteer"
+            ]
+        },
+        "sqlite": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "mcp-server-sqlite",
+                "--db-path",
+                "/home/lermf/nexus.db"
+            ]
+        },
+        "postgres": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "mcp-server-postgres",
+                "postgresql://localhost/nexus"
+            ]
+        },
+        "fetch": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-fetch"
+            ]
+        },
+        "time": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "mcp-server-time"
+            ]
+        },
+        "grep": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "mcp-server-ripgrep"
+            ]
+        },
+        "docker": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-docker"
+            ]
+        },
+        "system-monitor": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "node-system-monitor-mcp"
+            ]
+        },
+        "clipboard": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "mcp-clipboard"
+            ]
+        },
+        "openapi": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-openapi"
+            ]
+        },
+        "local-search": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "mcp-server-local-search"
+            ]
+        },
+        "audio-recorder": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "screenpipe-mcp"
+            ]
+        },
+        "math": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "mcp-server-math"
+            ]
+        },
+        "obsidian": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "mcp-obsidian"
+            ]
+        },
+        "ollama-bridge": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "mcp-ollama"
+            ]
+        }
+    }
+}

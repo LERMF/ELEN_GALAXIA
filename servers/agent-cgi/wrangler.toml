@@ -1,0 +1,74 @@
+name = "agent-cgi"
+main = "build/worker/shim.mjs"
+compatibility_date = "2024-12-20"
+compatibility_flags = ["nodejs_compat"]
+
+[build]
+command = "cargo install -q worker-build && worker-build --release"
+
+# ===========================================
+# SECURITY: ZERO TRUST CONFIGURATION
+# ===========================================
+[vars]
+ADMIN_EMAIL = "admin@lermf.org"                   # Hardcoded admin exclusivity
+CF_TEAM_DOMAIN = "lermf.cloudflareaccess.com"     # JWKS endpoint for JWT validation
+MAX_REACT_ITERATIONS = "5"                         # ReAct loop limit
+
+# ===========================================
+# DATA BINDINGS
+# ===========================================
+[[d1_databases]]
+binding = "DB"
+database_name = "nexus-core"
+database_id = "YOUR_D1_DATABASE_ID"
+
+[[kv_namespaces]]
+binding = "CONFIG"
+id = "YOUR_KV_NAMESPACE_ID"
+
+[[r2_buckets]]
+binding = "ARTIFACTS"
+bucket_name = "nexus-artifacts"
+
+# ===========================================
+# INTELLIGENCE BINDINGS
+# ===========================================
+[ai]
+binding = "AI"
+
+[[vectorize]]
+binding = "MEMORY"
+index_name = "agent-embeddings"
+
+# ===========================================
+# INTER-WORKER RPC (Service Bindings)
+# ===========================================
+[[services]]
+binding = "AUTH_VAULT"
+service = "auth-vault"
+
+[[services]]
+binding = "TOOL_DISPATCH"
+service = "tool-dispatch"
+
+# ===========================================
+# MESSAGING (Queues)
+# ===========================================
+[[queues.producers]]
+queue = "agent-queue"
+binding = "QUEUE"
+
+# ===========================================
+# FUTURE: WORKFLOWS (Durable Execution)
+# ===========================================
+# [[workflows]]
+# binding = "AGENT_WORKFLOW"
+# class_name = "AgentWorkflow"
+
+# ===========================================
+# SECURITY NOTES
+# ===========================================
+# 1. All requests require: Cf-Access-Jwt-Assertion header
+# 2. JWT is validated against CF Access JWKS endpoint
+# 3. Only ADMIN_EMAIL can invoke the agent
+# 4. Configure Cloudflare Access on custom domain (no workers.dev)

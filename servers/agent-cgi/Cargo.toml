@@ -1,0 +1,23 @@
+[package]
+name = "agent-cgi"
+version = "0.1.0"
+edition = "2021"
+description = "AGENT_CGI (GOD_MODE) Orchestrator - ReAct-based autonomous agent for NEXUS_OMNI"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+worker = "0.7"
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+async-trait = "0.1"
+thiserror = "2.0"
+base64 = "0.22"
+console_error_panic_hook = "0.1"
+getrandom = { version = "0.3", features = ["wasm_js"] }
+
+[profile.release]
+lto = true
+strip = true
+opt-level = "s"

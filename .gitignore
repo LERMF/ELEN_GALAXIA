@@ -1,0 +1,27 @@
+# Systems
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+dist/
+build/
+coverage/
+
+# Rust
+target/
+**/*.rs.bk
+Cargo.lock
+
+# MCP & Secrets
+global-config/secrets.json
+.antigravityignore
+secrets.json
+# Logs
+*.log
+npm-debug.log*
+
+# Editor
+.idea/
+.vscode/
+*.swp

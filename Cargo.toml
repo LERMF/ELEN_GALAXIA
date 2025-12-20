@@ -1,0 +1,6 @@
+[workspace]
+members = [
+    "servers/*",
+    "quantum_neofuse_mcp"
+]
+resolver = "2"

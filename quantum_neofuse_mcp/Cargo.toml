@@ -1,0 +1,15 @@
+[package]
+name = "quantum_neofuse_mcp"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+tokio = { version = "1.0", features = ["io-std", "rt"] }  # OPTIMIZED: Minimal for stdin MCP
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+schemars = "0.8"
+anyhow = "1.0"
+thiserror = "1.0"
+rand = "0.8"
+# Note: For real MCP SDK usage, we'd add `mcp-sdk-rs` or similar. 
+# Attempting to use a standard JSON-RPC approach or mock if crate unavailable in this env.
