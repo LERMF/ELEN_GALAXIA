@@ -1,72 +1,53 @@
-# 📋 Task: Create Private GitHub Repository for NEXUS-PROTOCOL
+# 📋 Task: Push ELEN_GALAXIA to GitHub
 
-> **Objective:** Publish local repository `/home/lermf/$PROJETOS$/kilo-sota-cloud` to a **private** GitHub repository.
+> **Status:** In Progress
 > **Security Level:** High (Contains personal infrastructure configs)
 
 ---
 
-## 🚀 Execution Steps
+## 🚀 Current Step: Push to GitHub
 
-### 1. Preparation
-
-- **Navigate to directory:**
-
-  ```bash
-  cd "/home/lermf/$PROJETOS$/kilo-sota-cloud"
-  ```
-
-- **Verify Git status:**
-
-  ```bash
-  git status
-  # Ensure working tree is clean and 'feat: initial commit...' is present
-  ```
-
-### 2. Create Remote Repository (Choose One Method)
-
-#### Option A: Using GitHub CLI (`gh`) - Recommended
-
-If `gh` is installed and authenticated:
+After creating the empty repo on GitHub (which you're doing now), run:
 
 ```bash
-# Create private repo and push immediately
-gh repo create nexus-protocol --private --source=. --remote=origin --push
-```
+# Navigate to project
+cd "/home/lermf/$PROJETOS$/ELEN_GALAXIA"
 
-#### Option B: Manual Creation (Browser)
+# Add GitHub remote (replace LERMF with your username if different)
+git remote add origin https://github.com/LERMF/ELEN_GALAXIA.git
 
-1. Go to: [https://github.com/new](https://github.com/new)
-2. **Repository name:** `nexus-protocol`
-3. **Visibility:** Select **Private** 🔒 (Critical!)
-4. **Initialize:** Do NOT check "Add a README", .gitignore, or license (we import existing code).
-5. Click **Create repository**.
-
-### 3. Link & Push
-
-After creating the empty repo manually (Option B):
-
-```bash
-# Add remote
-git remote add origin https://github.com/YOUR_USERNAME/nexus-protocol.git
-
-# Set main branch (if not already)
+# Rename branch to main (if needed)
 git branch -M main
 
-# Push all code
+# Push to GitHub
 git push -u origin main
 ```
 
 ---
 
-## 🛡️ Privacy Checklist
+## 🛡️ Pre-Push Checklist
 
-- [ ] Ensure repository visibility is **Private**.
-- [ ] Verify `.gitignore` excludes sensitive files (secrets, personal keys).
-- [ ] Do **not** publish `mcp_registry.json` if it contains unencrypted API keys (use template/env vars instead).
+- [x] Repository visibility set to **Private** on GitHub
+- [x] `.gitignore` exists and excludes sensitive files
+- [ ] `secrets.json` is ignored (verify with `git status`)
+- [ ] Commit is ready: `git log -1` shows initial commit
 
 ---
 
-## 📝 Repository Description
+## ⚡ Quick Command (Copy & Paste)
 
-**Suggested Description:**
-> "NEXUS-PROTOCOL: Personal SOTA Cloud-Native Architecture & Global Configurations. Hardware-Zero Philosophy."
+```bash
+cd "/home/lermf/\$PROJETOS\$/ELEN_GALAXIA" && \
+git remote add origin https://github.com/LERMF/ELEN_GALAXIA.git && \
+git branch -M main && \
+git push -u origin main
+```
+
+---
+
+## 📝 Repository Details
+
+- **Name:** ELEN_GALAXIA
+- **Visibility:** Private 🔒
+- **Description:** "🌌 Personal Edge Architecture - Global SOTA 2025 Configuration & Hardware-Zero Philosophy"
+- **GitHub Apps:** Google Cloud Build, GitGuardian, Models (GitHub)
